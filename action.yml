@@ -1,0 +1,15 @@
+name: 'Expect Self Parameter'
+description: 'Check if specific parameters are set for given steps'
+inputs:
+  params:
+    description: 'List of step-id, param, and expected-value sets in JSON format'
+    required: true
+    type: string
+runs:
+  using: 'composite'
+  steps:
+    - name: Check parameters
+      shell: bash
+      run: ./scripts/validate-param.sh
+      env:
+        PARAMS: ${{ inputs.params }}
