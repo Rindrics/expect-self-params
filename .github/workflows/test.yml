@@ -14,13 +14,22 @@ jobs:
         with:
           params: >
             {
-              "foo": {"continue-on-error": "false"},
-              "bar": {"timeout-minutes": "10"}
+              "workflow": {
+                "on": "[push, pull_request]"
+              },
+              "jobs.test": {
+                "runs-on": "ubuntu-latest"
+              },
+              "steps.foo": {
+                "continue-on-error": "true"
+              },
+              "steps.bar": {
+                "timeout-minutes": "10"
+              }
             }
 
       - id: foo
         run: echo hello
-        continue-on-error: true
 
       - id: bar
         run: sleep 5
