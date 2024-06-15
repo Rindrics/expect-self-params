@@ -30,7 +30,7 @@ jobs:
 
       - id: foo
         run: echo hello
-        continue-on-error: false
+        continue-on-error: true
 
       - id: bar
         run: sleep 5
