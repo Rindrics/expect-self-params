@@ -1,4 +1,4 @@
-name: 'Expect Self Parameter'
+name: 'Expect Self Params'
 description: 'Check if specific parameters are set for given steps'
 
 branding:
