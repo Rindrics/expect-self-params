@@ -1,5 +1,10 @@
 name: 'Expect Self Parameter'
 description: 'Check if specific parameters are set for given steps'
+
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
 inputs:
   params:
     description: 'List of step parameters and values in JSON format'
