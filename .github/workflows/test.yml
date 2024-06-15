@@ -1,0 +1,27 @@
+name: Test Expect Self Parameter Action
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run expect-self-parameter action
+        uses: ./  # This points to the local action in the repository
+        with:
+          params: >
+            {
+              "foo": {"continue-on-error": "false"},
+              "bar": {"timeout-minutes": "10"}
+            }
+
+      - id: foo
+        run: echo hello
+        continue-on-error: true
+
+      - id: bar
+        run: sleep 5
+        timeout-minutes: 10
