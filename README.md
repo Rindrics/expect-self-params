@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run expect-self-parameter action
-        uses: Rindrics/expect-self-params
+        uses: Rindrics/expect-self-params@v1
         with:
           params: >
             {
