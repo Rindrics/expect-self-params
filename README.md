@@ -1,4 +1,4 @@
-# Expect Self Parameter Action
+# Expect Self Params Action
 
 A GitHub Action to validate that specified parameters in your workflow steps are set to expected values.
 This helps ensure that your workflows are configured correctly and consistently.
