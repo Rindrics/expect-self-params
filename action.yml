@@ -1,0 +1,30 @@
+name: 'Expect Self Params'
+description: 'Check if specific parameters are set for given steps'
+
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
+inputs:
+  params:
+    description: 'List of step parameters and values in JSON format'
+    required: true
+    type: string
+runs:
+  using: 'composite'
+  steps:
+    - name: Get current workflow file
+      id: get-workflow
+      shell: bash
+      run: |
+        WORKFLOW_REF="${{ github.workflow_ref }}"
+        WORKFLOW_PATH=$(echo "${WORKFLOW_REF}" | cut -d'@' -f1)
+        WORKFLOW_FILE=".github/workflows/${WORKFLOW_PATH##*/}"
+        echo "workflow_file=${WORKFLOW_FILE}" >> $GITHUB_ENV
+
+    - name: Check parameters
+      shell: bash
+      run: ./scripts/validate-param.sh
+      env:
+        PARAMS: ${{ inputs.params }}
+        WORKFLOW_FILE: ${{ github.workspace }}/${{ env.workflow_file }}
