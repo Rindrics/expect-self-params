@@ -39,5 +39,5 @@
 [tagpr]
 	vPrefix = true
 	releaseBranch = main
-        release = true
+        release = false
 	versionFile = .version
