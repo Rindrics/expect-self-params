@@ -29,7 +29,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run expect-self-parameter action
+      - name: Run expect-self-params action
         uses: Rindrics/expect-self-params@v1
         with:
           params: >
