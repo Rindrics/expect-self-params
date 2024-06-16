@@ -1,5 +1,7 @@
 # Changelog
 
+## [v1.0.4](https://github.com/Rindrics/expect-self-params/compare/v1.0.3...v1.0.4) - 2024-06-16
+
 ## [v1.0.3](https://github.com/Rindrics/expect-self-params/compare/v1.0.2...v1.0.3) - 2024-06-16
 - Re-publish with new name by @Rindrics in https://github.com/Rindrics/expect-self-params/pull/9
 
